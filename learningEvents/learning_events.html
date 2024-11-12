@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Learning Events</title>
+    </head>
+    <body>
+        <h1>Learning Events</h1>
+
+        <h3>Without addEventListener</h3>
+        <p>I think the important of this listerner is not for the page view, <br>
+            only for the code</p>
+        <button id="myButton" onclick="handleButtonClick()">Click me</button>
+        <script>
+        function handleButtonClick() {
+            console.log('Button clicked!');
+        }
+        </script>
+        <h3>With addEventListener</h3>
+        <button id="myButton">Click me</button>
+        <script>
+          // Get the button element
+          const button = document.getElementById('myButton');
+          // Add event listener for 'click' event
+          button.addEventListener('click', handleButtonClick);
+          // Function to handle button click
+          function handleButtonClick() {
+            console.log('Button clicked!');
+          }
+        </script>
+
+        <h3>There is another yazilis sekli for the code part</h3>
+        <button id="clickButton">Click Me!</button>
+        <script>
+        document.getElementById('clickButton').addEventListener('click', function() {
+            alert('Button clicked!');
+        });
+        </script>
+
+        <h3>MouseOver</h3>
+        <p>This one shows the coordinates of <br> 
+            my mouse on the console of the browser</p>
+        <div id="moveArea" style="width: 200px; height: 200px; background-color: lightcoral;"></div>
+        <script>
+        const moveArea = document.getElementById('moveArea');
+        moveArea.addEventListener('mousemove', function(event) {
+            console.log(`Mouse coordinates - X: ${event.clientX}, Y: ${event.clientY}`);
+        });
+        </script>
+
+        <h3>Keydown(press) and keyup(release)</h3>
+        <p>The keyup event triggers upon releasing a key,<br>
+             while the keydown event triggers upon pressing a key down.</p>
+        
+        <input type="text" id="keyInput">
+        <script>
+        const keyInput = document.getElementById('keyInput');
+        keyInput.addEventListener('keydown', function() {
+            console.log('Key pressed down!');
+        });
+        keyInput.addEventListener('keyup', function() {
+            console.log('Key released!');
+        });
+        </script>
+
+        <h3>Keypress(press and hold)</h3>
+        <p>The keypress event in JavaScript occurs when a key on the keyboard <br>
+            is pressed down and produces a character value. It specifically <br>
+            represents pressing a key that results in a character input.</p>
+        
+        <input type="text" id="pressInput">
+        <script>
+        const pressInput = document.getElementById('pressInput');
+        pressInput.addEventListener('keypress', function() {
+            console.log('Key pressed!');
+        });
+        </script>
+        <p></p>
+
+        <h3>1 Submit event</h3>
+        <p>Activated when a user submits the form, either by clicking <br>
+            a submit button or programmatically using JavaScript. <br>
+            This event enables developers to handle form data, perform <br>
+            validation, or prevent default submission behavior.</p>
+        
+        <form id="myForm">
+            <input type="text" id="textInput">
+            <input type="submit" value="Submit">
+        </form>
+        <script>
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevents the default form submission behavior
+            console.log('Form submitted!');
+        });
+        </script>
+
+        <h3>Change event</h3>
+        <p>Used when the value of an input element within the form changes. <br>
+            It applies to various form elements such as text inputs, checkboxes, <br>
+            radio buttons, and dropdowns. This event enables real-time validation, <br>
+            updates, or actions based on user input changes.</p>
+
+        <h3>Focus event</h3>
+        <p>Focus event triggers element attention (for example: clicks, tabs). <br>
+            These events are useful for providing visual cues, validation messages, <br>
+            or triggering actions when users interact with form elements.</p>
+
+        <input type="text" id="textInput" placeholder="Click here">
+        <script>
+            const textInput = document.getElementById('textInput');
+            textInput.addEventListener('focus', function() {
+                console.log('Input focused');
+            });
+            textInput.addEventListener('blur', function() {
+                console.log('Input blurred');
+            });
+        </script>
+        <p>The code creates a text input in HTML with <br>
+            placeholder text and adds 'Focus' and 'blur' event <br>
+            listeners to the input. When the input gains focus, <br>
+            the 'focus' listener logs 'Input focused', and when it <br>
+            loses focus, the 'blur' listener logs 'Input blurred' to the console.</p>
+
+        <h3>Load event</h3>
+        <p>Used when the entire document and its dependent resources <br>
+            (like images and stylesheets) finish loading, <br>
+            indicating that the page is ready.</p>
+        <script>
+        window.addEventListener('load', function() {
+            console.log('Page and all resources loaded');
+        });
+        </script>
+        <p>Code explanation: This event adds an event listener <br>
+            to the window object for the 'load' event. When the <br>
+            document and its resources finish loading, the function <br>
+            logs 'Page and all resources loaded' to the console.</p>
+
+        <h3>Resize event</h3>
+        <p>Starts when the browser window changes size, <br>
+            enabling adjustments or responses to alterations in window dimensions</p>
+        <script>
+            window.addEventListener('resize', function() {
+            console.log('Window resized');
+          });
+        </script>
+        <p>Code explanation: This code adds an event listener <br>
+            to the window object, listening for the 'resize' event. <br>
+            When the browser window resizes, triggers a function logging <br>
+            'Window resized' to the console.</p>
+
+        <h3>Scroll event</h3>
+        <p>It occurs when ther is the detection of scrolling actions within the document.</p>
+        <div style="height: 2000px; background-color: lightblue;">
+        Scroll down
+        </div>
+        <script>
+            window.addEventListener('scroll', function() {
+            console.log('Document scrolled');
+        });
+        </script>
+        <p>Code eplanation: This code creates a "div" in HTML for <br>
+            scrolling and adds an event listener to the window, <br>
+            listening for the 'scroll' event. When the user scrolls <br>
+            the document view, the 'scroll' event triggers a function that <br>
+            logs 'Document scrolled' to the console.</p>
+    
+    </body>
+</html>
